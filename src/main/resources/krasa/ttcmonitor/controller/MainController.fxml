@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox alignment="CENTER" prefHeight="577.0" prefWidth="594.0" spacing="10"
+	  xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+	  fx:controller="krasa.ttcmonitor.controller.MainController">
+	<HBox alignment="CENTER_LEFT" fillHeight="false" maxHeight="-Infinity" prefWidth="200.0" spacing="5"
+		  VBox.vgrow="NEVER">
+		<children>
+			<Label text="URL:"/>
+			<TextField fx:id="newUrl" prefHeight="25.0" prefWidth="400.0"/>
+			<Button fx:id="addButton" text="Add"/>
+		</children>
+		<children>
+			<Label text="Frequency [min]"/>
+			<TextField fx:id="frequency" prefWidth="50" text="5"/>
+			<Label text="Requests:"/>
+			<Label fx:id="counter" text="0"/>
+			<CheckBox fx:id="runningCheckBox" mnemonicParsing="false" text="Running"/>
+			<Button fx:id="startFast" text="Start fast"/>
+			<CheckBox fx:id="proxyCheckBox" mnemonicParsing="false" text="Proxy"/>
+			<!--			<Button onAction="#nextProxy" text="Next Proxy"/>                 -->
+			<Label text="Volume"/>
+			<TextField fx:id="volume" prefWidth="50" text="-1"/>
+			<Button fx:id="testNotification" text="Test"/>
+			<Button fx:id="testError" text="Test error"/>
+			<Button fx:id="reloadTable" text="Reload Table"/>
+		</children>
+		<VBox.margin>
+			<Insets/>
+		</VBox.margin>
+		<opaqueInsets>
+			<Insets/>
+		</opaqueInsets>
+	</HBox>
+	<SplitPane dividerPositions="0.5" orientation="VERTICAL" VBox.vgrow="ALWAYS">
+		<items>
+			<TableView fx:id="table1" prefHeight="200.0" prefWidth="200.0"/>
+			<TableView fx:id="table2" prefHeight="100.0" prefWidth="200.0"/>
+		</items>
+	</SplitPane>
+
+	<Button fx:id="deleteAll" text="Delete all"/>
+
+</VBox>
